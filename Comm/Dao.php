@@ -4,7 +4,7 @@ namespace Comm;
 
 use Traits\Singleton;
 
-class DAOPDO
+class Dao
 {
     use Singleton;
 
