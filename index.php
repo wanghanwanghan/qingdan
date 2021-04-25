@@ -1,5 +1,12 @@
 <?php
 
+//1,结合前几次的作业，写一个自己的FPM框架，要求
+//  自动加载 ✅
+//  异常容错
+//  日志追踪
+//  路由自动映射 ✅
+//2,pcntl_*系列函数的熟悉与使用
+
 define('APP_ROOT', __DIR__ . DIRECTORY_SEPARATOR);
 
 spl_autoload_register(function ($class) {
