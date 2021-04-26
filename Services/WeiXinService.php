@@ -3,9 +3,12 @@
 namespace Services;
 
 use Comm\Config;
+use Traits\Singleton;
 
 class WeiXinService
 {
+    use Singleton;
+
     function getOpenId($code): array
     {
         $url = Config::getInstance()->getConf('weixin', 'getOpenIdUrl');

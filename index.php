@@ -7,6 +7,17 @@
 //  路由自动映射 ✅
 //2,pcntl_*系列函数的熟悉与使用
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('HTTP/1.1 200 OK');
+    header('Content-Type: application/json;charset=UTF-8');
+    header('Content-Length: 0');
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Allow-Headers: *');
+    exit;
+}
+
 define('APP_ROOT', __DIR__ . DIRECTORY_SEPARATOR);
 
 //自动加载
@@ -63,5 +74,9 @@ $resp = \Comm\Response::getInstance()->afterAction($resp);
 
 header('Content-Type: application/json;charset=UTF-8');
 header('Content-Length: ' . strlen($resp));
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Allow-Headers: *');
 
 echo $resp;
